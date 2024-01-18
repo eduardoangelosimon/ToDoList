@@ -1,13 +1,10 @@
-import {Text} from 'react-native';
-import {Input} from '../../components/Input';
-import {Task} from '../../components/Task';
 import React from 'react';
+import {Header} from '../Header';
 
 export function Home() {
   return (
     <>
-      <Input />
-      <Task />
+      <Header />
     </>
   );
 }

@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './styles';
-import Svg from 'react-native-svg';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../styles/colors';
-Icon.loadFont();
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+
 export function Task() {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -15,12 +14,19 @@ export function Task() {
 
   return (
     <View style={styles(isChecked).container}>
+      <BouncyCheckbox
+        onPress={handleClickCheckbox}
+        fillColor={isChecked ? COLORS.darkPurple : COLORS.blue}
+        innerIconStyle={{borderWidth: 2.5}}
+      />
       <Text style={styles(isChecked).label}>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
       </Text>
       <TouchableOpacity>
-        <Icon name="add" size={20} color={COLORS.danger} />
+        <Image
+          style={styles(isChecked).trashButton}
+          source={require('../../../assets/trash.png')}
+        />
       </TouchableOpacity>
     </View>
   );
