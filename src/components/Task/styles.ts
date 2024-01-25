@@ -20,5 +20,11 @@ export const styles = (isChecked: boolean) =>
     label: {
       fontSize: TYPOGRAPHY.fontSizes.medium,
       color: COLORS.gray[100],
+      textDecorationLine: isChecked ? 'line-through' : 'none',
+      width: '70%',
+    },
+    trashButton: {
+      height: 16,
+      width: 14,
     },
   });

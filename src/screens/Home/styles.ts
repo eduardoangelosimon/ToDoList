@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import TYPOGRAPHY from '../../styles/typography';
 
 export const styles = StyleSheet.create({
   sectionContainer: {
@@ -11,8 +12,8 @@ export const styles = StyleSheet.create({
   },
   sectionDescription: {
     marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+    fontSize: TYPOGRAPHY.fontSizes.large,
+    fontWeight: '700',
   },
   highlight: {
     fontWeight: '700',

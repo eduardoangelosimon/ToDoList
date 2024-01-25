@@ -1,7 +1,7 @@
 const COLORS = {
   //Produto
-  blue: '##1E6F9F',
-  darkBlue: '##4EA8DE',
+  blue: '#1E6F9F',
+  darkBlue: '#4EA8DE',
 
   purple: '#8284FA',
   darkPurple: '#5E60CE',

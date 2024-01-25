@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './styles';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../styles/colors';
-Icon.loadFont();
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+
+export function Task() {
+  const [isChecked, setIsChecked] = useState(false);
 
 type TaskType = {
   title: string;
@@ -14,9 +16,19 @@ type TaskType = {
 export function Task({title, isChecked}: TaskType) {
   return (
     <View style={styles(isChecked).container}>
-      <Text style={styles(isChecked).label}>{title}</Text>
+      <BouncyCheckbox
+        onPress={handleClickCheckbox}
+        fillColor={isChecked ? COLORS.darkPurple : COLORS.blue}
+        innerIconStyle={{borderWidth: 2.5}}
+      />
+      <Text style={styles(isChecked).label}>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      </Text>
       <TouchableOpacity>
-        <Icon name="add" size={20} color={COLORS.danger} />
+        <Image
+          style={styles(isChecked).trashButton}
+          source={require('../../../assets/trash.png')}
+        />
       </TouchableOpacity>
     </View>
   );
