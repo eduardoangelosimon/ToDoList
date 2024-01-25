@@ -5,9 +5,6 @@ import {styles} from './styles';
 import COLORS from '../../styles/colors';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
-export function Task() {
-  const [isChecked, setIsChecked] = useState(false);
-
 type TaskType = {
   title: string;
   isChecked: boolean;
@@ -17,13 +14,11 @@ export function Task({title, isChecked}: TaskType) {
   return (
     <View style={styles(isChecked).container}>
       <BouncyCheckbox
-        onPress={handleClickCheckbox}
+        // onPress={handleClickCheckbox}
         fillColor={isChecked ? COLORS.darkPurple : COLORS.blue}
         innerIconStyle={{borderWidth: 2.5}}
       />
-      <Text style={styles(isChecked).label}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      </Text>
+      <Text style={styles(isChecked).label}>{title}</Text>
       <TouchableOpacity>
         <Image
           style={styles(isChecked).trashButton}
