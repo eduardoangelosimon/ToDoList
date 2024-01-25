@@ -2,6 +2,7 @@ import {TextInput} from 'react-native';
 import {styles} from './styles';
 import COLORS from '../../styles/colors';
 import {useState} from 'react';
+import React from 'react';
 
 export function Input() {
   const [inputFocused, setInputFocused] = useState(false);
