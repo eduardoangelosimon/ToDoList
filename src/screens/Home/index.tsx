@@ -11,7 +11,7 @@ export function Home() {
     <>
       <Input />
       {tasks.map(task => (
-        <Task title={task.title} isChecked={task.isChecked} />
+        <Task key={task.title} title={task.title} isChecked={task.isChecked} />
       ))}
     </>
   );
