@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import COLORS from '../../styles/colors';
 import TYPOGRAPHY from '../../styles/typography';
 
-export const styles = (isChecked: boolean) =>
+export const styles = (isCompleted: boolean) =>
   StyleSheet.create({
     container: {
       backgroundColor: COLORS.gray[500],
@@ -11,7 +11,7 @@ export const styles = (isChecked: boolean) =>
       padding: 16,
       fontSize: TYPOGRAPHY.fontSizes.medium,
       fontFamily: '"Inter", "sans-serif"',
-      borderColor: isChecked ? COLORS.gray[500] : COLORS.gray[400],
+      borderColor: isCompleted ? COLORS.gray[500] : COLORS.gray[400],
       borderWidth: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -20,7 +20,7 @@ export const styles = (isChecked: boolean) =>
     label: {
       fontSize: TYPOGRAPHY.fontSizes.medium,
       color: COLORS.gray[100],
-      textDecorationLine: isChecked ? 'line-through' : 'none',
+      textDecorationLine: isCompleted ? 'line-through' : 'none',
       width: '70%',
     },
     trashButton: {

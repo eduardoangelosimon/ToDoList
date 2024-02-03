@@ -13,7 +13,5 @@ export const styles = (inputFocused: boolean) =>
       fontFamily: '"Inter", "sans-serif"',
       borderColor: inputFocused ? COLORS.darkPurple : COLORS.gray[700],
       borderWidth: 1,
-      flex: 1,
-      bottom: -30,
     },
   });

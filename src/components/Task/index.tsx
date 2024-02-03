@@ -1,27 +1,37 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './styles';
 
 import COLORS from '../../styles/colors';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
-type TaskType = {
+export type TaskType = {
+  id: number;
   title: string;
   isChecked: boolean;
 };
 
+import {TaskContext} from '../../contexts/task';
+
 export function Task({title, isChecked}: TaskType) {
+  const [isCompleted, setIsCompleted] = useState(isChecked);
+
+  function handleClickCheckbox() {
+    setIsCompleted(!isCompleted);
+  }
+
   return (
     <View style={styles(isChecked).container}>
       <BouncyCheckbox
-        // onPress={handleClickCheckbox}
-        fillColor={isChecked ? COLORS.darkPurple : COLORS.blue}
+        onPress={handleClickCheckbox}
+        fillColor={isCompleted ? COLORS.darkPurple : COLORS.blue}
         innerIconStyle={{borderWidth: 2.5}}
+        isChecked={isCompleted}
       />
-      <Text style={styles(isChecked).label}>{title}</Text>
+      <Text style={styles(isCompleted).label}>{title}</Text>
       <TouchableOpacity>
         <Image
-          style={styles(isChecked).trashButton}
+          style={styles(isCompleted).trashButton}
           source={require('../../../assets/trash.png')}
         />
       </TouchableOpacity>
